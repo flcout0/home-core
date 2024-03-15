@@ -1,4 +1,4 @@
-name: Kubesec
+name: Kubesec scan
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
     - cron: '24 12 * * 2'
 
 jobs:
-  lint:
+  scan:
     name: Kubesec
     runs-on: ubuntu-20.04
     permissions:
