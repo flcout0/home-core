@@ -24,6 +24,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }} # Checkout PR's head commit
 
       - name: List changed files
+        if: github.event_name == 'pull_request'
         run: |
           git fetch --no-tags --prune --depth=1 origin +refs/pull/${{ github.event.pull_request.number }}/merge
           git diff --name-only FETCH_HEAD
