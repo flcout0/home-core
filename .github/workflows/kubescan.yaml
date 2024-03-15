@@ -1,9 +1,15 @@
-name: Suggest autofixes with Kubescape for PR by reviews
+name: PR Kubescape
 on:
-  pull_request_target:
+    pull_request_target:
+    push:
+      branches: [ "main" ]
+    pull_request:
+      # The branches below must be a subset of the branches above
+      branches: [ "main" ]
+  
 
 jobs:
-  kubescape-fix-pr-reviews:
+  kubescape-scan:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
